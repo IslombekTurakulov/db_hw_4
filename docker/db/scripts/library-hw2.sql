@@ -10,7 +10,6 @@ CREATE TABLE library.Category (
 );
 
 
-
 CREATE TABLE library.Book (
 	"bookId" integer NOT NULL,
 	"bookYear" DATE NOT NULL,
