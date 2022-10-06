@@ -1,14 +1,47 @@
 version: "3.9"
 services:
-  postgres:
-    image: postgres:latest
+  first_db:
+    container_name: first_db
+    image: postgres:14.5
+    restart: always
     environment:
-      POSTGRES_DB: "teacher"
-      POSTGRES_USER: "teacher"
-      POSTGRES_PASSWORD: "teacher"
-      PGDATA: "/var/lib/postgresql/data/pgdata"
+      POSTGRES_DB: "turakulov_204"
+      POSTGRES_USER: "turakulov_204"
+      POSTGRES_PASSWORD: "turakulov_204"
+      PGDATA: "/var/lib/postgresql/data/pgdata-1"
     volumes:
-      - docker/db/scripts:/docker-entrypoint-initdb.d
-      - dz:/var/lib/postgresql/data
+      - ./docker/db/scripts/library-hw2.sql:/docker-entrypoint-initdb.d/library-hw2.sql
+      - ./dz:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+
+  second_db:
+    container_name: second_db
+    image: postgres:14.5
+    restart: always
+    environment:
+      POSTGRES_DB: "turakulov_204"
+      POSTGRES_USER: "turakulov_204"
+      POSTGRES_PASSWORD: "turakulov_204"
+      PGDATA: "/var/lib/postgresql/data/pgdata-2"
+    volumes:
+      - ./docker/db/scripts/station-hw3-1.sql:/docker-entrypoint-initdb.d/station-hw3-1.sql
+      - ./dz:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+
+  third_db:
+    container_name: third_db
+    image: postgres:14.5
+    restart: always
+    environment:
+      POSTGRES_DB: "turakulov_204"
+      POSTGRES_USER: "turakulov_204"
+      POSTGRES_PASSWORD: "turakulov_204"
+      PGDATA: "/var/lib/postgresql/data/pgdata-3"
+    volumes:
+      - ./docker/db/scripts/hospital-hw3-2.sql:/docker-entrypoint-initdb.d/hospital-hw3-2.sql 
+      - ./dz:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
