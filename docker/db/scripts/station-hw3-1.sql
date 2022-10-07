@@ -32,12 +32,12 @@ CREATE TABLE station.Connected (
 );
 
 
-ALTER TABLE station.Trains ADD CONSTRAINT "Trains_fk0" FOREIGN KEY ("start_station_id") REFERENCES station.Stations("name");
+ALTER TABLE station.Trains ADD FOREIGN KEY ("start_station_id") REFERENCES station.Stations("name");
 
-ALTER TABLE station.Trains ADD CONSTRAINT "Trains_fk1"  FOREIGN KEY ("end_station_id") REFERENCES station.Stations("name");
+ALTER TABLE station.Trains ADD FOREIGN KEY ("end_station_id") REFERENCES station.Stations("name");
 
-ALTER TABLE station.Connected ADD CONSTRAINT "Connected_fk0"  FOREIGN KEY ("trainNR") REFERENCES station.Trains("trainNR");
+ALTER TABLE station.Connected ADD FOREIGN KEY ("trainNR") REFERENCES station.Trains("trainNR");
 
-ALTER TABLE station.Connected ADD CONSTRAINT "Connected_fk0"  FOREIGN KEY ("from_station_id") REFERENCES station.Stations("name");
+ALTER TABLE station.Connected ADD FOREIGN KEY ("from_station_id") REFERENCES station.Stations("name");
 
-ALTER TABLE station.Connected ADD CONSTRAINT "Connected_fk0"  FOREIGN KEY ("to_station_id") REFERENCES station.Stations("name");
+ALTER TABLE station.Connected ADD FOREIGN KEY ("to_station_id") REFERENCES station.Stations("name");
