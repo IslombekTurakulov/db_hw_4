@@ -6,16 +6,14 @@
 
 ------
 
-
-[](./tables/library-islam.png)
-
+<img width="40%" src="./tables/library-islam.png" />
 
 #### Hospital
 
 ------
 
 
-[](./tables/hospital-islam.png)
+<img width="40%" src="./tables/hospital-islam.png" />
 
 
 #### Station
@@ -23,5 +21,5 @@
 ------
 
 
-[](./tables/station-islam.png)
+<img width="40%" src="./tables/station-islam.png" />
 
