@@ -7,30 +7,28 @@ CREATE TABLE station.Cities (
 )
 
 CREATE TABLE station.Stations (
-    "name"  TEXT NOT NULL,
+    "name"  TEXT PRIMARY KEY,
     "#tracks"    integer NOT NULL,
     "city_name"   varchar NOT NULL,
     "city_region" varchar NOT NULL,
-    CONSTRAINT "Station_pk" PRIMARY KEY ("name"),
     FOREIGN KEY ("city_region", "city_name") REFERENCES station.Cities
 );
 
 
 CREATE TABLE station.Trains (
-  "trainNR" SERIAL NOT NULL,
+  "trainNR" SERIAL PRIMARY KEY,
   "length" integer NOT NULL,
   "start_station_id" varchar NOT NULL,
-  "end_station_id" varchar NOT NULL,
-  CONSTRAINT "Trains_pk" PRIMARY KEY ("trainNR")
+  "end_station_id" varchar NOT NULL
 );
 
 
 CREATE TABLE station.Connected (
-  "trainNR" integer NOT NULL,
+  "trainNR" integer PRIMARY KEY,
   "from_station_id" varchar NOT NULL,
   "to_station_id" varchar NOT NULL,
-  "departure" timestamp NOT NULL,
-  "arrival" timestamp NOT NULL
+  "departure" TIMESTAMP NOT NULL,
+  "arrival" TIMESTAMP NOT NULL
 );
 
 
