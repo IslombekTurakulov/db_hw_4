@@ -4,7 +4,7 @@ CREATE TABLE station.Cities (
     "region"    varchar NOT NULL,
     "city_name" varchar NOT NULL,
     PRIMARY KEY ("region", "city_name")
-)
+);
 
 CREATE TABLE station.Stations (
     "name"  TEXT PRIMARY KEY,
